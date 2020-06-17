@@ -1,0 +1,25 @@
+on:
+  push:
+  pull_request:
+
+name: Main workflow
+jobs:
+  check:
+    name: dist check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-python@v1
+        with:
+          python-version: "3.8"
+          architecture: "x64"
+      - uses: dschep/install-poetry-action@v1.2
+        with:
+          preview: true
+      - run: pip install twine
+      - run: poetry build
+      - run: twine check dist/*
+      - uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: dist/

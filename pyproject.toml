@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "django-utils-six"
+version = "2.0"
+description = "Forward compatibility django.utils.six for Django 3"
+authors = ["Django Software Foundation <foundation@djangoproject.com>", "Wu Haotian <whtsky@gmail.com>"]
+packages = [
+    { include = "django" },
+]
+readme = "README.md"
+license = "BSD-3-Clause"
+keywords = ["django", "compatibility", "six"]
+homepage = "https://github.com/whtsky/django-utils-six"
+repository = "https://github.com/whtsky/django-utils-six"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
